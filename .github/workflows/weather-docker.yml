@@ -22,12 +22,11 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'temurin' # Specify the Java distribution
+          distribution: 'temurin'
 
-
-      # Step 3: Build the JAR file with Maven
-      - name: Build with Maven
-        run: mvn clean package
+      # Step 3: Build the project with Maven (with debugging)
+      - name: Build with Maven (debug)
+        run: mvn clean package -X # -X flag enables debug output
 
       # Step 4: Set up Docker Buildx
       - name: Set up Docker Buildx
