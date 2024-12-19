@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: project ci/cd flow
+name: Build and Push Docker Image
 
 on:
   push:
