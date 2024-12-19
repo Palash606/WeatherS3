@@ -1,4 +1,4 @@
 FROM openjdk:17-jdk-alpine
-COPY target/Weather-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ADD target/weather.jar weather.jar
+ENTRYPOINT ["java","-jar","/weather.jar"]
