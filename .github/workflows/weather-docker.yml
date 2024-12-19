@@ -25,6 +25,9 @@ jobs:
           distribution: 'temurin' # Specify the Java distribution
 
 
+      # Step 3: Build the JAR file with Maven
+      - name: Build with Maven
+        run: mvn clean package
 
       # Step 4: Set up Docker Buildx
       - name: Set up Docker Buildx
