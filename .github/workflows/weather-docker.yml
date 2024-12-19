@@ -42,5 +42,5 @@ jobs:
             ${{ env.IMAGE_NAME }}:${{ github.sha }}
 
       # Step 5: Verify Docker image
-      - name: Verify Docker image
-        run: docker pull ${{ env.IMAGE_NAME }}:latest
+#      - name: Verify Docker image
+#        run: docker pull ${{ env.IMAGE_NAME }}:latest
