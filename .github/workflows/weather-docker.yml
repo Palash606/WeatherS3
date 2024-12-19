@@ -3,7 +3,7 @@ name: Build and Push Docker Image to Docker Hub
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   IMAGE_NAME: palashshah606/weather_s3  # Replace with your Docker Hub repository name
