@@ -1,4 +1,7 @@
-target/
+# Ignore everything in the target folder except the built JAR file
+target/*
+!target/*.jar
+
 .idea/
 .git/
 .gitignore
