@@ -26,7 +26,7 @@ HELP.md
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-target
+target/
 
 .env
 .gitattributes
