@@ -1,0 +1,7 @@
+com\example\weather\service\S3Service.class
+com\example\weather\WeatherApplication.class
+com\example\weather\config\AwsConfig.class
+com\example\weather\util\WeatherDataExtractor.class
+com\example\weather\controller\WeatherController.class
+com\example\weather\WeatherScheduler.class
+com\example\weather\service\WeatherService.class

@@ -1,67 +1,3 @@
-//package com.example.weather.controller;
-//
-//import com.example.weather.service.S3Service;
-//import com.example.weather.service.WeatherService;
-//import com.example.weather.util.WeatherDataExtractor;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.ui.Model;
-//import org.springframework.web.bind.annotation.GetMapping;
-//
-//import java.util.Map;
-//
-//@Controller
-//public class WeatherController {
-//
-//    @Autowired
-//    private WeatherService weatherService;
-//
-//    @Autowired
-//    private S3Service s3Service;
-//
-//    @GetMapping("/")
-//    public String showWeatherData(Model model) {
-//        try {
-//            // Fetch weather data from S3
-//            String rawWeatherData = s3Service.fetchFromS3("weather-data.json"); // Fetch the data from S3
-//
-//            // Extract specific data as a map from the raw data
-//            Map<String, String> weatherData = WeatherDataExtractor.extractSpecificDataAsMap(rawWeatherData);
-//
-//            // Pass the structured weather data to the model
-//            model.addAttribute("weatherData", weatherData);
-//
-//        } catch (Exception e) {
-//            // Handle errors and pass the error message to the model
-//            System.out.println("Error fetching weather data: " + e.getMessage());
-//            model.addAttribute("error", "Error fetching data: " + e.getMessage());
-//        }
-//
-//        return "index";
-//    }
-//
-//    @GetMapping("/uploadWeather")
-//    public String uploadWeatherData(Model model) {
-//        try {
-//            // Fetch data from OpenWeather API
-//            String rawData = weatherService.fetchWeatherData();
-//            System.out.println("Fetched weather data: " + rawData);
-//
-//            // Upload the weather data to S3
-//            s3Service.uploadToS3("weather-data.json", rawData); // Upload the raw data to S3
-//
-//            model.addAttribute("message", "Weather data uploaded to S3 successfully.");
-//
-//        } catch (Exception e) {
-//            System.out.println("Error uploading data to S3: " + e.getMessage());
-//            model.addAttribute("error", "Error uploading data to S3: " + e.getMessage());
-//        }
-//
-//        return "index";
-//    }
-//}
-
-
 package com.example.weather.controller;
 
 import com.example.weather.service.S3Service;
@@ -126,38 +62,6 @@ public class WeatherController {
             System.out.println("Error processing weather data: " + e.getMessage());
             model.addAttribute("error", "Error processing weather data: " + e.getMessage());
         }
-
         return "index";
     }
 }
-
-
-//@Controller
-//public class WeatherController {
-//
-//    @Autowired
-//    private WeatherService weatherService;
-//
-//    @Autowired
-//    private S3Service s3Service;
-//
-//    @GetMapping("/uploadWeather")
-//    public String uploadWeatherData(Model model) {
-//        try {
-//            // Fetch data from OpenWeather API
-//            String rawData = weatherService.fetchWeatherData();
-//            System.out.println("Fetched weather data: " + rawData);
-//
-//            // Upload the weather data to S3
-//            s3Service.uploadToS3("weather-data.json", rawData); // Upload the raw data to S3
-//
-//            model.addAttribute("message", "Weather data uploaded to S3 successfully.");
-//
-//        } catch (Exception e) {
-//            System.out.println("Error uploading data to S3: " + e.getMessage());
-//            model.addAttribute("error", "Error uploading data to S3: " + e.getMessage());
-//        }
-//
-//        return "index";
-//    }
-//}
