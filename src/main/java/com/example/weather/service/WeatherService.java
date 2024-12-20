@@ -19,14 +19,13 @@ public class WeatherService {
             String response = restTemplate.getForObject(apiUrl, String.class);
             System.out.println("API response: " + response);
 
-            if (response == null || response.isEmpty()) {
+            if (response.isEmpty()) {
                 throw new RuntimeException("Received empty response for city: " + city);
             }
 
             return response;
         } catch (Exception e) {
             System.err.println("Error during API call for city: " + city);
-            e.printStackTrace();
             throw new RuntimeException("Error fetching weather data for city: " + city, e);
         }
     }
